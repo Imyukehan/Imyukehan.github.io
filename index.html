@@ -1,20 +1,142 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>跳转至blog...</title>
+    <meta charset="utf-8">
+    <title>Hi, there</title>
+
+    <!--Import CSS-->
+    <link rel="stylesheet" type="text/css" href="styles/jquery.fullPage.css">
+    <link rel="stylesheet" type="text/css" href="styles/bootstrap.css">
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+    <style type="text/css">
+        body {
+            margin-top: 60px;
+        }
+
+        h1,h2, h3, p, footer {
+            text-align: center;
+        }
+
+        .strong {
+            font-weight: 500;
+        }
+    </style>
 </head>
 <body>
+    <script type="text/javascript" src="script/jquery.js"></script>
+    <script type="text/javascript" src="script/jquery.fullPage.js"></script>
+    <script type="text/javascript" src="script/bootstrap.js"></script>
 
-    <h1>本页面正在开发中， 5s后转至博客界面</h1>
+    <script src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
+
+    <div id="fullpage">
+
+        <div class="section">
+            <div class="container-fluid">
+                <p>My name is <span class="strong">Khan</span> /kɑ:n/</p>
+                <p>I've been waiting for you</p>
+                <br>
+                <p>
+                    <span>
+                        <i class="fa fa-code" aria-hidden="true"></i>
+                        <a href="https://me.khan.moe">Blog</a>
+                    </span>
+                    <span>
+                        <i class="fa fa-github" aria-hidden="true"></i>
+                        <a href="https://github.com/Imyukehan">Github</a>
+                    </span>
+                </p>
+            </div>
+        </div>
+        <div class="section">
+            <div class="container-fluid">
+                <h3 class="strong">About me:</h3>
+                <p>CS student</p>
+                <p>half geek, half nerd</p>
+                <p>A fan of heros</p>
+                <p>Chasing for future</p>
+            </div>
+        </div>
+
+    </div>
+
 
     <script type="text/javascript">
-        window.onload = function () {
-            setTimeout("JumpTo()", 5000);
-        }
+        $(document).ready(function() {
+            $('#fullpage').fullpage({
+                //Navigation
+                menu: '#menu',
+                lockAnchors: false,
+                anchors:['firstPage', 'secondPage'],
+                navigation: true,
+                navigationPosition: 'right',
+                navigationTooltips: ['firstSlide', 'secondSlide'],
+                showActiveTooltip: false,
+                slidesNavigation: false,
+                slidesNavPosition: 'bottom',
 
-        function JumpTo() {
-            window.location.href='https://me.khan.moe';
-        }
+                //Scrolling
+                css3: true,
+                scrollingSpeed: 700,
+                autoScrolling: true,
+                fitToSection: true,
+                fitToSectionDelay: 1000,
+                scrollBar: false,
+                easing: 'easeInOutCubic',
+                easingcss3: 'ease',
+                loopBottom: false,
+                loopTop: false,
+                loopHorizontal: true,
+                continuousVertical: false,
+                continuousHorizontal: false,
+                scrollHorizontally: false,
+                interlockedSlides: false,
+                dragAndMove: false,
+                offsetSections: false,
+                resetSliders: false,
+                fadingEffect: false,
+                normalScrollElements: '#element1, .element2',
+                scrollOverflow: false,
+                scrollOverflowReset: false,
+                scrollOverflowOptions: null,
+                touchSensitivity: 15,
+                normalScrollElementTouchThreshold: 5,
+                bigSectionsDestination: null,
+
+                //Accessibility
+                keyboardScrolling: true,
+                animateAnchor: true,
+                recordHistory: true,
+
+                //Design
+                controlArrows: true,
+                verticalCentered: true,
+                sectionsColor : ['transparent'],
+                paddingTop: '3em',
+                paddingBottom: '10px',
+                fixedElements: '#header, .footer',
+                responsiveWidth: 0,
+                responsiveHeight: 0,
+                responsiveSlides: false,
+                parallax: false,
+                parallaxOptions: {type: 'reveal', percentage: 62, property: 'translate'},
+
+                //Custom selectors
+                sectionSelector: '.section',
+                slideSelector: '.slide',
+
+                lazyLoading: true,
+
+                //events
+                onLeave: function(index, nextIndex, direction){},
+                afterLoad: function(anchorLink, index){},
+                afterRender: function(){},
+                afterResize: function(){},
+                afterResponsive: function(isResponsive){},
+                afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex){},
+                onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex){}
+            });
+        });
     </script>
 </body>
 </html>
