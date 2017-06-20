@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title></title>
+    <title>跳转至blog...</title>
 </head>
 <body>
 
+    <h1>本页面正在开发中， 5s后转至博客界面</h1>
+
     <script type="text/javascript">
-        window.location.href='https://me.khan.moe';
+        window.onload = function () {
+            setTimeout("JumpTo()", 5000);
+        }
+
+        function JumpTo() {
+            window.location.href='https://me.khan.moe';
+        }
     </script>
 </body>
 </html>
