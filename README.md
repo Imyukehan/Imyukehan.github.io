@@ -1,2 +1,2 @@
 # Imyukehan.github.io
-个人主页，开发中
+用 Github Pages 搭建个人主页
